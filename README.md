@@ -1,8 +1,8 @@
 # Book System Service
 
-A simple service that allows CRUD operations for a book managing system that stores books and notes about the book.
-
 ## How It Works
+
+A simple service that allows CRUD operations for a book managing system that stores books and notes about the book.
 
 ## Project Details
 
