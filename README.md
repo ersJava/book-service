@@ -10,7 +10,7 @@ Please see YAML document for API instructions.
 
 Config server: https://github.com/ersJava/book-service-config-server
 
-This application implements REST microservices, queue producers and consumers, and using Feign web service clients.The Book Service is a typical Spring Boot REST web service with Controller, DAO (utilizing Jdbc and prepared statements), and Service Layer components and acts as the edge service for the system with Eureka. Exceptions are handled through Controller Advice and return proper HTTP status codes and data when exception occur.
+This application implements REST microservices, queue producers and consumers, and using Feign web service clients.The Book Service is a typical Spring Boot REST web service with Controller, DAO (utilizing Jdbc template and prepared statements), and Service Layer components and acts as the edge service for the system with Eureka. Exceptions are handled through Controller Advice and return proper HTTP status codes and data when exception occur.
 
 All operations are done through the Book Service. 
 
