@@ -2,7 +2,6 @@
 
 A simple service that allows CRUD operations for a book managing system that stores books and notes about the book.
 
-
 ## How It Works
 
 ## Project Details
@@ -10,6 +9,9 @@ A simple service that allows CRUD operations for a book managing system that sto
 
 ### Technologies Used
 * Java
+* Spring Boot
+* Feign
+* Eureka Server
 * MySQL
 * RabbitMQ
 * Cache
