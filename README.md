@@ -4,7 +4,7 @@
 
 A simple service that allows CRUD operations for a book managing system that stores books and respective notes.
 
-Please see YAML document for API instructions.
+Please see YAML for API documenation.
 
 ## Project Details
 
