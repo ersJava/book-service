@@ -26,6 +26,8 @@ public class NoteDaoJdbcTemplateImpl implements NoteDao {
             "delete from note where note_id = ?";
     private final String SELECT_ALL_NOTES_BY_BOOK_ID_SQL =
             "select * from note where book_id = ?";
+    private final String DELETE_BY_BOOK_ID_SQL =
+            "delete from note where book_id = ?";
 
     private JdbcTemplate jdbcTemplate;
 
@@ -60,7 +62,7 @@ public class NoteDaoJdbcTemplateImpl implements NoteDao {
     }
 
     @Override
-    public void update(Note note) {
+    public void update(Integer id, Note note) {
         jdbcTemplate.update(UPDATE_NOTE_SQL,
                 note.getBookId(),
                 note.getNote(),
@@ -73,6 +75,11 @@ public class NoteDaoJdbcTemplateImpl implements NoteDao {
     }
 
     @Override
+    public void deleteByBookId(Integer bookId) {
+        jdbcTemplate.update(DELETE_BY_BOOK_ID_SQL, bookId);
+    }
+
+    @Override
     public List<Note> findByBookId(Integer bookId) {
         return jdbcTemplate.query(SELECT_ALL_NOTES_BY_BOOK_ID_SQL, this::mapRowToNote, bookId);
     }
@@ -80,7 +87,7 @@ public class NoteDaoJdbcTemplateImpl implements NoteDao {
     @Override
     public Note mapRowToNote(ResultSet rs, int rowNum) throws SQLException {
         Note note = new Note();
-        note.setNoteId(rs.getInt("noted_id"));
+        note.setNoteId(rs.getInt("note_id"));
         note.setBookId(rs.getInt("book_id"));
         note.setNote(rs.getString("note"));
         return note;

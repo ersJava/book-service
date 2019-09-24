@@ -1,20 +1,17 @@
-package com.company.noteservice.viewmodel;
+package com.company.queue.shared.viewmodel;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
 public class NoteViewModel {
 
-    @Min(value = 1)
     private Integer noteId;
 
-    @NotNull
-    @Min(value = 1)
     private Integer bookId;
 
     @Size(max = 255)
+    @NotEmpty(message = "Please supply content for the note")
     private String note;
 
     public Integer getNoteId() {
@@ -44,15 +41,24 @@ public class NoteViewModel {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof NoteViewModel)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         NoteViewModel that = (NoteViewModel) o;
         return Objects.equals(getNoteId(), that.getNoteId()) &&
                 getBookId().equals(that.getBookId()) &&
-                Objects.equals(getNote(), that.getNote());
+                getNote().equals(that.getNote());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getNoteId(), getBookId(), getNote());
+    }
+
+    @Override
+    public String toString() {
+        return "NoteViewModel{" +
+                "noteId=" + noteId +
+                ", bookId=" + bookId +
+                ", note='" + note + '\'' +
+                '}';
     }
 }

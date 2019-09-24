@@ -11,8 +11,9 @@ public interface NoteDao {
     Note add(Note note);
     Note find(Integer id);
     List<Note> findAll();
-    void update(Note note);
+    void update(Integer id, Note note);
     void delete(Integer id);
+    void deleteByBookId(Integer bookId);
 
     List<Note> findByBookId(Integer bookId);
 
