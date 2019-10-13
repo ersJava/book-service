@@ -1,5 +1,7 @@
 # Book System Service
 
+<img src "https://github.com/ersJava/book-service/blob/master/Screen%20Shot%202019-10-02%20at%209.29.04%20PM.png">
+
 ## How It Works
 
 A simple service that allows CRUD operations for a book managing system that stores books and respective notes.
